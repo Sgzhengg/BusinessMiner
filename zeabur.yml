@@ -10,6 +10,14 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=redditminer
 
+# BusinessMiner 前端服务（静态网站）
+  - type: prebuilt
+    name: businessminer-frontend
+    path: frontend
+    outputDir: .
+    env:
+      - PORT=8080
+
 # BusinessMiner 后端服务
   - type: worker
     name: redditminer-api
