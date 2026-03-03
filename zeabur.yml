@@ -1,7 +1,7 @@
 # Zeabur 部署配置
 
-# PostgreSQL 数据库
 services:
+  # PostgreSQL 数据库
   - type: postgres
     name: redditminer-db
     version: "15"
@@ -10,10 +10,15 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=redditminer
 
-# BusinessMiner 后端服务
-  - type: worker
+  # BusinessMiner 前端服务（静态网站）
+  - type: prebuilt
+    name: businessminer-frontend
+    path: frontend/stitch-designs
+    outputDir: .
+
+  # BusinessMiner 后端服务
+  - type: python
     name: redditminer-api
-    runtime: python
     path: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
@@ -24,5 +29,3 @@ services:
       - DEEPINFRA_API_KEY=${DEEPINFRA_API_KEY}
       - DEEPINFRA_MODEL=${DEEPINFRA_MODEL}
       - DEEPINFRA_BASE_URL=https://api.deepinfra.com/v1/openai
-    ports:
-      - 8000
