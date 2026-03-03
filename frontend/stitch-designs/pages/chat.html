@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>深度研究 - BusinessMiner</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00E5BF",
+                        "background-dark": "#0A1929",
+                        "surface-dark": "#132F4C",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "system-ui", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A1929;
+            min-height: 100vh;
+        }
+        .message-container {
+            height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+        .message-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .message-container::-webkit-scrollbar-thumb {
+            background: rgba(0, 229, 191, 0.3);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="font-display text-slate-100 antialiased">
+    <div class="relative flex flex-col h-screen bg-background-dark">
+        <!-- 头部 -->
+        <header class="sticky top-0 z-30 flex items-center bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-primary/10">
+            <button class="flex size-10 items-center justify-center rounded-full hover:bg-white/5 transition-colors" onclick="window.navigateTo('dashboard')">
+                <span class="material-symbols-outlined text-slate-300">arrow_back</span>
+            </button>
+            <div class="flex-1 text-center">
+                <h1 class="text-lg font-semibold tracking-tight text-white" data-chat-title>深度研究</h1>
+                <p class="text-xs text-slate-400">AI 助手正在研究中</p>
+            </div>
+            <button class="flex size-10 items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+                <span class="material-symbols-outlined text-slate-300">more_vert</span>
+            </button>
+        </header>
+
+        <!-- 消息区域 -->
+        <main class="flex-1 px-4 py-4 message-container" data-messages-container>
+            <!-- 欢迎消息 -->
+            <div class="flex justify-start mb-6">
+                <div class="max-w-[85%] rounded-2xl rounded-tl-none px-5 py-4 bg-white/10 border border-white/10">
+                    <p class="text-sm leading-relaxed text-slate-100">
+                        你好！我是 BusinessMiner 的 AI 研究助手。
+                        <br/><br/>
+                        我可以帮你深度分析这个商机，包括：
+                        <br/>
+                        • 市场规模和趋势分析
+                        <br/>
+                        • 竞争对手调研
+                        <br/>
+                        • 商业模式建议
+                        <br/>
+                        • 技术实现方案
+                        <br/><br/>
+                        请告诉我你想了解什么？
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- 输入区域 -->
+        <footer class="sticky bottom-0 bg-background-dark/90 backdrop-blur-md border-t border-white/5 px-4 py-4">
+            <div class="flex items-end gap-3 max-w-2xl mx-auto">
+                <div class="flex-1 relative">
+                    <textarea
+                        data-message-input
+                        rows="1"
+                        placeholder="输入你的问题..."
+                        class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 pr-12 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-all"
+                        style="min-height: 48px; max-height: 120px;"
+                        onkeydown="if(event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); window.sendMessage(this.dataset.sessionId); }"
+                    ></textarea>
+                    <button class="absolute right-2 bottom-2 p-2 rounded-full bg-primary/20 hover:bg-primary/30 transition-colors" onclick="window.sendMessage(this.dataset.sessionId)">
+                        <span class="material-symbols-outlined text-primary text-xl">send</span>
+                    </button>
+                </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-2">按 Enter 发送，Shift + Enter 换行</p>
+        </footer>
+    </div>
+
+    <script>
+        // 自动聚焦输入框
+        setTimeout(() => {
+            const input = document.querySelector('[data-message-input]');
+            if (input) input.focus();
+        }, 300);
+
+        // 自动调整输入框高度
+        const textarea = document.querySelector('[data-message-input]');
+        if (textarea) {
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+            });
+        }
+    </script>
+</body>
+</html>

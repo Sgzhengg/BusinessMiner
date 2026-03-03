@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusinessMiner - Reddit 商机发现平台</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00E5BF",
+                        "deep-space": "#0A1929",
+                        "card-bg": "rgba(255, 255, 255, 0.05)",
+                        "surface-dark": "#132F4C",
+                        "accent-blue": "#173A5E",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "system-ui", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        /* 页面过渡效果 */
+        #main-content {
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+
+        /* 加载动画 */
+        .loading-spinner {
+            border: 3px solid rgba(0, 229, 191, 0.2);
+            border-top: 3px solid #00E5BF;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 骨架屏效果 */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        body {
+            background-color: #0A1929;
+        }
+    </style>
+</head>
+<body class="font-display text-slate-100 antialiased overflow-x-hidden">
+    <!-- 主内容区域 -->
+    <div id="main-content">
+        <!-- 加载中 -->
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="text-center">
+                <div class="loading-spinner mx-auto mb-4"></div>
+                <p class="text-slate-400">正在加载...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <nav class="bottom-nav">
+        <div class="flex items-center justify-between max-w-md mx-auto">
+            <a class="nav-item" href="#dashboard" data-page="dashboard">
+                <span class="material-symbols-outlined">home</span>
+                <span class="label">首页</span>
+            </a>
+            <a class="nav-item" href="#mining-config" data-page="mining-config">
+                <span class="material-symbols-outlined">settings_input_component</span>
+                <span class="label">挖掘配置</span>
+            </a>
+            <a class="nav-item" href="#strategies" data-page="strategies">
+                <span class="material-symbols-outlined">terminal</span>
+                <span class="label">方案</span>
+            </a>
+            <a class="nav-item" href="#profile" data-page="profile">
+                <span class="material-symbols-outlined">person</span>
+                <span class="label">我的</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 应用脚本 -->
+    <script src="js/device.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        // 导航栏点击事件处理
+        document.addEventListener('click', (e) => {
+            const navItem = e.target.closest('.nav-item');
+            if (navItem) {
+                e.preventDefault();
+                const page = navItem.getAttribute('data-page');
+                if (page) {
+                    navigateTo(page);
+                }
+            }
+        });
+
+        // 监听 URL hash 变化
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.slice(1) || 'dashboard';
+            navigateTo(hash, false);
+        });
+    </script>
+</body>
+</html>

@@ -27,7 +27,7 @@
 
 ```bash
 git clone <your-repo-url>
-cd RedditMiner
+cd BusinessMiner
 
 # 复制并编辑环境变量
 cp .env.example .env
@@ -85,7 +85,7 @@ sudo systemctl start postgresql redis-server
 ```bash
 cd /home/ec2-user/
 git clone <your-repo-url>
-cd RedditMiner
+cd BusinessMiner
 
 cp .env.example .env
 # 编辑 .env 文件
@@ -104,7 +104,7 @@ After=network.target postgresql.service redis-server.service
 [Service]
 Type=simple
 User=ec2-user
-WorkingDirectory=/home/ec2-user/RedditMiner/backend
+WorkingDirectory=/home/ec2-user/BusinessMiner/backend
 Environment="PATH=/home/ec2-user/venv/bin"
 ExecStart=/home/ec2-user/venv/bin/python main.py
 Restart=always

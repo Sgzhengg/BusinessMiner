@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessMiner - 洞察详情分析</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00E5BF",
+                        "background-dark": "#0A1929",
+                        "surface-dark": "#132F4C",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#0A1929] text-slate-100 font-display;
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto border-x border-white/5">
+<header class="flex items-center bg-[#0A1929]/80 ios-blur p-4 pb-2 justify-between sticky top-0 z-20 border-b border-white/5">
+<button class="text-slate-100 flex size-10 items-center justify-start">
+<span class="material-symbols-outlined text-2xl">chevron_left</span>
+</button>
+<h2 class="text-slate-100 text-[17px] font-semibold tracking-tight flex-1 text-center">洞察详情分析</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 text-slate-100">
+<span class="material-symbols-outlined text-2xl">share</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto no-scrollbar pb-32">
+<section class="px-5 pt-6 pb-4">
+<h1 class="text-white text-[26px] font-bold leading-tight tracking-tight mb-3">
+                    用户抱怨 CRM 移动端加载缓慢
+                </h1>
+<div class="flex items-center gap-2 text-slate-400 text-xs font-medium mb-5">
+<span class="bg-white/10 px-2 py-0.5 rounded">r/ProductManagement</span>
+<span>•</span>
+<span>2小时前</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat_bubble</span> 142 评论</span>
+</div>
+<div class="inline-flex items-center gap-2 rounded-full bg-[#00E5BF]/10 px-4 py-1.5 border border-[#00E5BF]/20">
+<span class="material-symbols-outlined text-[#00E5BF] text-[18px] fill-1">auto_awesome</span>
+<p class="text-[#00E5BF] text-sm font-bold">92% AI 匹配度</p>
+</div>
+</section>
+<nav class="sticky top-[58px] z-10 bg-[#0A1929]/95 ios-blur border-b border-white/5">
+<div class="flex px-5 justify-between">
+<button class="flex flex-col items-center justify-center border-b-2 border-primary py-3 px-2">
+<span class="text-primary text-[15px] font-bold">AI 分析</span>
+</button>
+<button class="flex flex-col items-center justify-center border-b-2 border-transparent py-3 px-2">
+<span class="text-slate-400 text-[15px] font-medium">深度研究</span>
+</button>
+<button class="flex flex-col items-center justify-center border-b-2 border-transparent py-3 px-2">
+<span class="text-slate-400 text-[15px] font-medium">实操方案</span>
+</button>
+</div>
+</nav>
+<div class="px-5 py-6 space-y-8">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-white text-lg font-bold">情绪分布分析</h3>
+<span class="text-xs text-slate-500 font-medium">基于 142 条讨论</span>
+</div>
+<div class="bg-[#132F4C] rounded-2xl p-6 border border-white/5">
+<div class="flex items-end justify-between h-24 gap-4">
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-red-500/40 rounded-t-md h-[78%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] text-red-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity">78%</div>
+</div>
+<span class="text-[10px] uppercase font-bold text-slate-500">负面</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-400/20 rounded-t-md h-[15%]"></div>
+<span class="text-[10px] uppercase font-bold text-slate-500">中立</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/30 rounded-t-md h-[7%]"></div>
+<span class="text-[10px] uppercase font-bold text-slate-500">正面</span>
+</div>
+</div>
+<p class="mt-6 text-sm text-slate-300 leading-relaxed pl-3 border-l-2 border-primary/50 italic">
+                            “核心痛点在于离线同步和初始元数据加载时的性能瓶颈，用户对现有移动端的响应速度普遍感到失望。”
+                        </p>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="text-white text-lg font-bold">核心痛点词云</h3>
+<div class="flex flex-wrap gap-3">
+<span class="bg-primary/10 text-primary border border-primary/20 px-4 py-2 rounded-xl text-lg font-bold">延迟 (Latency)</span>
+<span class="bg-white/5 text-slate-300 px-3 py-1.5 rounded-xl text-sm border border-white/5">离线同步</span>
+<span class="bg-primary/10 text-primary border border-primary/20 px-5 py-3 rounded-2xl text-xl font-black">性能瓶颈</span>
+<span class="bg-white/5 text-slate-300 px-3 py-1.5 rounded-xl text-sm border border-white/5">交互摩擦</span>
+<span class="bg-white/5 text-slate-300 px-4 py-2 rounded-xl text-base font-medium border border-white/5">数据冗余</span>
+<span class="bg-primary/10 text-primary border border-primary/20 px-3 py-1.5 rounded-xl text-sm font-bold">Salesforce</span>
+<span class="bg-white/5 text-slate-300 px-3 py-1.5 rounded-xl text-sm border border-white/5">等待动画</span>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="text-white text-lg font-bold">关键洞察</h3>
+<div class="space-y-4">
+<div class="flex gap-4 p-4 bg-[#132F4C] rounded-2xl border border-white/5">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">lightbulb</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-white text-[15px] mb-1">缓存策略优化</h4>
+<p class="text-sm text-slate-400 leading-snug">用户反馈超过 5 秒的记录更新等待。建议针对高频元数据实施边缘缓存。</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 bg-[#132F4C] rounded-2xl border border-white/5">
+<div class="size-10 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-red-400 text-xl">trending_down</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-white text-[15px] mb-1">移动端流失风险</h4>
+<p class="text-sm text-slate-400 leading-snug">由于移动端不可靠，大量用户开始回流至 Excel 或桌面版，导致移动生态活跃度下降。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="absolute bottom-0 left-0 right-0 p-4 pb-8 bg-[#0A1929]/90 ios-blur border-t border-white/5 z-30">
+<div class="flex items-center gap-2 bg-[#132F4C] rounded-2xl pl-4 pr-1.5 py-1.5 border border-white/10 shadow-lg focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-slate-400">smart_toy</span>
+<input class="flex-1 bg-transparent border-none text-white focus:ring-0 placeholder:text-slate-500 text-[15px] py-2" placeholder="向 AI 追问更多细节..." type="text"/>
+<button class="bg-primary text-[#0A1929] rounded-xl size-10 flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl font-bold">arrow_upward</span>
+</button>
+</div>
+<div class="h-4"></div>
+</footer>
+</div>
+
+</body></html>

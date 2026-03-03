@@ -1,0 +1,27 @@
+# Zeabur 部署配置
+
+# PostgreSQL 数据库
+services:
+  - type: postgres
+    name: redditminer-db
+    version: "15"
+    env:
+      - POSTGRES_USER=redditminer
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=redditminer
+
+# BusinessMiner 后端服务
+  - type: worker
+    name: redditminer-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
+    env:
+      - DATABASE_URL=postgresql://redditminer:${POSTGRES_PASSWORD}@redditminer-db:5432/redditminer
+      - REDDIT_CLIENT_ID=${REDDIT_CLIENT_ID}
+      - REDDIT_SECRET=${REDDIT_SECRET}
+      - DEEPINFRA_API_KEY=${DEEPINFRA_API_KEY}
+      - DEEPINFRA_MODEL=${DEEPINFRA_MODEL}
+      - DEEPINFRA_BASE_URL=https://api.deepinfra.com/v1/openai
+    ports:
+      - 8000

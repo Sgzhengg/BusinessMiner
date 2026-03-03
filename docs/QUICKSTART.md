@@ -11,7 +11,7 @@
 
 ```bash
 git clone <repo-url>
-cd RedditMiner
+cd BusinessMiner
 
 # 复制环境文件
 cp .env.example .env
@@ -79,7 +79,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8000
 
 ```bash
 # 进入项目目录
-cd RedditMiner
+cd BusinessMiner
 
 # 复制环境文件
 cp .env.example .env

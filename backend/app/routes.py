@@ -182,4 +182,24 @@ def get_chat_messages(session_id: int, db: Session = Depends(get_db)):
 @router.get("/health")
 def health_check():
     """健康检查端点"""
-    return {"status": "ok", "service": "IdeaForge API"}
+    return {"status": "ok", "service": "BusinessMiner API"}
+
+
+# ============ 统计数据 ============
+@router.get("/stats")
+def get_stats(db: Session = Depends(get_db)):
+    """获取统计数据"""
+    total_findings = db.query(Finding).count()
+    new_findings = db.query(Finding).filter(Finding.status == 'new').count()
+    researching_findings = db.query(Finding).filter(Finding.status == 'researching').count()
+    completed_findings = db.query(Finding).filter(Finding.status == 'completed').count()
+
+    total_posts = db.query(RedditPost).count()
+
+    return {
+        "total": total_findings,
+        "new": new_findings,
+        "researching": researching_findings,
+        "completed": completed_findings,
+        "total_posts": total_posts
+    }

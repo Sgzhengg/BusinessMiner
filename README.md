@@ -17,7 +17,7 @@
 ```bash
 # 克隆项目
 git clone <repo-url>
-cd RedditMiner
+cd BusinessMiner
 
 # 配置环境变量
 cp .env.example .env
@@ -43,11 +43,17 @@ python main.py
 
 应用将在 http://localhost:8000 启动
 
+访问前端界面：
+- **新版 UI（推荐）**: http://localhost:8000/stitch-designs/
+- **旧版 UI**: http://localhost:8000/
+
 ## 📚 文档
 
 - [🏃 快速开始](docs/QUICKSTART.md) - 5 分钟上手
+- [☁️ Zeabur 部署](docs/ZEABUR_QUICKSTART.md) - 5分钟部署到 Zeabur
 - [👨‍💻 开发指南](docs/DEVELOPMENT.md) - 项目结构和开发工作流
 - [🚀 部署指南](docs/DEPLOYMENT.md) - 到云服务器和生产环境的部署
+- [✅ 部署检查清单](docs/DEPLOYMENT_CHECKLIST.md) - 部署前必读
 
 ## 🛠️ 技术栈
 
@@ -58,13 +64,15 @@ python main.py
 | 爬虫 | PRAW (Reddit API) |
 | AI | OpenAI API (GPT-3.5/4) |
 | 调度 | APScheduler |
-| 前端 | HTML/CSS/JavaScript |
+| 前端 | HTML/CSS/JavaScript + Tailwind CSS |
+| 前端架构 | SPA (单页应用) + Hash 路由 |
+| 设计系统 | Glassmorphism (玻璃态设计) |
 | 部署 | Docker + Docker Compose |
 
 ## 📂 项目结构
 
 ```
-RedditMiner/
+BusinessMiner/
 ├── backend/                    # 后端代码
 │   ├── app/
 │   │   ├── models/            # 数据模型
@@ -76,6 +84,13 @@ RedditMiner/
 │   ├── cli.py                 # CLI 工具
 │   └── requirements.txt
 ├── frontend/                   # 前端 Web UI
+│   ├── index.html             # 旧版单页面应用（备用）
+│   └── stitch-designs/        # 新版 SPA 应用（推荐）
+│       ├── index.html         # 主入口文件
+│       ├── css/               # 样式文件
+│       ├── js/                # JavaScript 文件
+│       ├── pages/             # 页面组件
+│       └── README.md          # 前端架构说明
 ├── docs/                       # 文档
 ├── docker-compose.yml          # Docker 配置
 └── README.md                   # 本文件
@@ -178,6 +193,7 @@ sudo systemctl start postgresql
 - Web UI 和 REST API
 
 ### 迭代一（进行中）
+- [x] 现代化前端 UI（Stitch 设计集成）
 - [ ] 用户账号系统
 - [ ] 邮件/Slack 推送
 - [ ] 更多 Subreddit 支持

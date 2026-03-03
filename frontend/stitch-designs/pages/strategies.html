@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessMiner - 实操方案</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00E5BF",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0A1929",
+                        "surface": "#12263a",
+                        "accent-cyan": "#00E5BF"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "system-ui", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center p-4 justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">实操方案</h1>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<div class="px-4 overflow-x-auto no-scrollbar">
+<div class="flex gap-6 whitespace-nowrap">
+<a class="border-b-2 border-primary pb-3 pt-2 text-primary text-sm font-bold" href="#">热门</a>
+<a class="border-b-2 border-transparent pb-3 pt-2 text-slate-500 dark:text-slate-400 text-sm font-bold" href="#">SaaS</a>
+<a class="border-b-2 border-transparent pb-3 pt-2 text-slate-500 dark:text-slate-400 text-sm font-bold" href="#">B2B</a>
+<a class="border-b-2 border-transparent pb-3 pt-2 text-slate-500 dark:text-slate-400 text-sm font-bold" href="#">移动端</a>
+<a class="border-b-2 border-transparent pb-3 pt-2 text-slate-500 dark:text-slate-400 text-sm font-bold" href="#">电子商务</a>
+</div>
+</div>
+</header>
+<main class="flex-1 p-4">
+<div class="mb-6">
+<p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">方案库已就绪</p>
+<h2 class="text-2xl font-bold leading-tight">已挖掘的洞察</h2>
+</div>
+<div class="masonry-grid space-y-4">
+<div class="break-inside-avoid bg-surface/40 dark:bg-surface border border-primary/10 rounded-xl overflow-hidden shadow-xl shadow-black/20">
+<div class="h-40 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQfrQujV5chvGXoPSkWt5eRJNc4UPozesWxRf06vhWHxi_uIzyNP-kNbKCHCv2MtPHzXWN1deWC-LDtw7GoFDHSKnRSVL6bXrZuNnncT78MOO0GCZWqcc_r6OQ-mKFrG3Lf5a5IOjHDdgiei4O8prdItJJC1DC0J5SukANOKYg_RvBMZEbYtpMINXYjGhuBftqQ6Z6Fx-yNCo2c7dpdS9aKhLrpFPZ1jRa5HR8MZmunJ4Mdqy_LQOw_Br7cuMZQYuGCeQAwnuomKM');"></div>
+<div class="p-4">
+<div class="flex gap-2 mb-2">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">高需求</span>
+<span class="bg-slate-700/50 text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded uppercase">SaaS</span>
+</div>
+<h3 class="text-lg font-bold mb-2">轻量级个人 CRM</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">面向个体创业者的自动化联系人管理工具</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-background-dark text-sm font-bold py-2.5 rounded-lg">查看策略</button>
+<button class="px-3 bg-slate-700/50 text-white rounded-lg border border-slate-600">
+<span class="material-symbols-outlined text-sm">ios_share</span>
+</button>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid bg-surface/40 dark:bg-surface border border-primary/10 rounded-xl overflow-hidden shadow-xl shadow-black/20">
+<div class="h-32 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7CTwzSvG3tgBzF122Dkh9qJh_v2A0HyDLtqa90FyCGdDmDW5JRlsy-A6VEXBwU43XevXJRthaZ9-kKSYBfujBJvuKfKmtvcUpJjMJUarEDMf-gjXeeLYfAP8yai4F42WhH4rsqaqWI-vD2hu5UOzFvxNMnGJ2IJbA0FHn03BeaHEEIhWm3uksZd-FkpV3jEu5FkAYkzoX5YrkstSt8GT9fjXhj2GisWs11iByYVyPNSPlva7MHjpZrqK2cbcSpl8CiNDRedjKeAo');"></div>
+<div class="p-4">
+<div class="flex gap-2 mb-2">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">B2B</span>
+<span class="bg-slate-700/50 text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded uppercase">AI 引擎</span>
+</div>
+<h3 class="text-lg font-bold mb-2">内容锻造专家</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">基于 Reddit 讨论自动生成技术白皮书</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-background-dark text-sm font-bold py-2.5 rounded-lg">查看策略</button>
+<button class="px-3 bg-slate-700/50 text-white rounded-lg border border-slate-600">
+<span class="material-symbols-outlined text-sm">ios_share</span>
+</button>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid bg-surface/40 dark:bg-surface border border-primary/10 rounded-xl overflow-hidden shadow-xl shadow-black/20">
+<div class="p-4 pt-6">
+<div class="flex gap-2 mb-2">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">新品</span>
+<span class="bg-slate-700/50 text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded uppercase">电子商务</span>
+</div>
+<h3 class="text-lg font-bold mb-2">生态供应链 AI</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">面向 D2C 品牌的实时碳足迹监测工具</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-background-dark text-sm font-bold py-2.5 rounded-lg">查看策略</button>
+<button class="px-3 bg-slate-700/50 text-white rounded-lg border border-slate-600">
+<span class="material-symbols-outlined text-sm">ios_share</span>
+</button>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid bg-surface/40 dark:bg-surface border border-primary/10 rounded-xl overflow-hidden shadow-xl shadow-black/20">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjE4sVxq_gWMafnrj9btVvclYOQHmT3W7ythKqp_ZKPtowtB0qMq4RS30Qjf8uh455KBh9gIPogJ-rUn_25LmJyCTlAT9eM02AhI-K_pIhqmWY9bKX7YV3GyojwXnPW1C596f5LLxxT0KDDkQmtU1rl_5plOtiaV44kf1LmYfl5bVyISf-7kcPLuAnVJnsNBn-a8AfE3meXcXiZW1tQ3YK0ld-EcYbhw14zTglBipfPY31SRSZDwQeG1zEqIKUe4AmS7oYQri870s');"></div>
+<div class="p-4">
+<div class="flex gap-2 mb-2">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">高可扩展性</span>
+</div>
+<h3 class="text-lg font-bold mb-2">开发者关系分析中心</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">针对 Discord 和 Reddit 社区的深度情感分析工具</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-background-dark text-sm font-bold py-2.5 rounded-lg">查看策略</button>
+<button class="px-3 bg-slate-700/50 text-white rounded-lg border border-slate-600">
+<span class="material-symbols-outlined text-sm">ios_share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="sticky bottom-0 z-20 bg-surface/90 backdrop-blur-xl border-t border-primary/10 px-4 pb-8 pt-2">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium tracking-tighter">探索</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">terminal</span>
+<span class="text-[10px] font-medium tracking-tighter">方案</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[10px] font-medium tracking-tighter">洞察</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium tracking-tighter">个人</span>
+</a>
+</div>
+</nav>
+
+</body></html>

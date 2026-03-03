@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>挖掘任务配置 - BusinessMiner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00E5BF",
+                        "background-dark": "#0A1929",
+                        "surface-dark": "#132F4C",
+                        "accent-blue": "#173A5E",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "system-ui", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background-dark text-slate-100 font-display min-h-screen antialiased;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #00E5BF;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 229, 191, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<header class="sticky top-0 z-30 flex items-center ios-blur bg-background-dark/80 px-4 pt-12 pb-4 border-b border-primary/10">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-slate-300">chevron_left</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-semibold tracking-tight text-white">挖掘任务配置</h1>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-primary">history</span>
+</button>
+</header>
+<main class="flex-1 px-4 py-6 space-y-8">
+<section>
+<div class="flex items-center justify-between mb-4 px-1">
+<h2 class="text-xs font-bold uppercase tracking-[0.2em] text-primary/70">运行中的挖掘任务</h2>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full border border-primary/20">2个活跃</span>
+</div>
+<div class="space-y-4">
+<div class="group relative overflow-hidden rounded-2xl bg-surface-dark/50 border border-white/5 p-5 shadow-2xl transition-all active:scale-[0.98]">
+<div class="flex items-start justify-between">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-primary animate-pulse"></div>
+<h3 class="text-base font-bold text-white tracking-wide">r/SaaS + "慢"</h3>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">update</span>
+<span class="text-xs text-slate-400 font-medium">频率：每天</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">hub</span>
+<span class="text-xs text-slate-400 font-medium">目标：Slack</span>
+</div>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-surface-dark/50 border border-white/5 p-5 shadow-2xl transition-all active:scale-[0.98]">
+<div class="flex items-start justify-between">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-primary/40"></div>
+<h3 class="text-base font-bold text-white tracking-wide">r/SideProject + "求荐"</h3>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">bolt</span>
+<span class="text-xs text-slate-400 font-medium">频率：实时</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">mail</span>
+<span class="text-xs text-slate-400 font-medium">目标：Email</span>
+</div>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<section class="rounded-3xl bg-accent-blue/20 border border-primary/20 p-6 space-y-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+<h2 class="text-lg font-bold text-white">新建挖掘任务</h2>
+</div>
+<div class="space-y-3">
+<label class="text-[10px] font-bold text-primary uppercase tracking-widest">选择 Subreddit</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full bg-primary text-background-dark text-xs font-bold flex items-center gap-1">
+                            r/SaaS <span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-white/10 text-slate-300 border border-white/10 text-xs font-medium flex items-center gap-1">
+                            r/IndieHackers <span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-white/10 text-slate-300 border border-white/10 text-xs font-medium flex items-center gap-1">
+                            r/Startups <span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+<div class="space-y-3">
+<label class="text-[10px] font-bold text-primary uppercase tracking-widest">输入关键词</label>
+<div class="relative">
+<input class="w-full bg-surface-dark border-none rounded-xl py-4 pl-4 pr-12 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-primary transition-all" placeholder="例如：'痛点' 或 '代替品'" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary/60">key</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="text-[10px] font-bold text-primary uppercase tracking-widest">推送频率</label>
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">每天一次</span>
+</div>
+<input class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer custom-range accent-primary" max="100" min="1" type="range" value="70"/>
+<div class="flex justify-between text-[10px] text-slate-500 font-medium px-1">
+<span>实时</span>
+<span>每周</span>
+</div>
+</div>
+<div class="space-y-3">
+<label class="text-[10px] font-bold text-primary uppercase tracking-widest">推送渠道</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-primary/20 border border-primary/40">
+<span class="material-symbols-outlined text-primary">chat</span>
+<span class="text-[10px] font-bold text-primary">Slack</span>
+</button>
+<button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10 grayscale opacity-60">
+<span class="material-symbols-outlined text-slate-400">mail</span>
+<span class="text-[10px] font-medium text-slate-400">Email</span>
+</button>
+<button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10 grayscale opacity-60">
+<span class="material-symbols-outlined text-slate-400">webhook</span>
+<span class="text-[10px] font-medium text-slate-400">Webhook</span>
+</button>
+</div>
+</div>
+<button class="w-full py-4 mt-4 bg-primary text-background-dark font-black text-sm uppercase tracking-widest rounded-xl shadow-[0_0_30px_rgba(0,229,191,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                    启动挖掘引擎
+                </button>
+</section>
+</main>
+<button class="fixed bottom-28 right-6 size-16 rounded-full bg-primary text-background-dark shadow-[0_10px_40px_rgba(0,229,191,0.5)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-3xl font-black">add</span>
+</button>
+<nav class="fixed bottom-0 left-0 right-0 z-50 ios-blur bg-background-dark/90 border-t border-white/5 px-6 pt-3 pb-8">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium">发现</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-fill-1">settings_input_component</span>
+<span class="text-[10px] font-bold">挖掘配置</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium">报告</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">我的</span>
+</a>
+</div>
+</nav>
+</div>
+
+</body></html>
