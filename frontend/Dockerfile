@@ -1,3 +1,3 @@
 FROM zeabur/caddy-static
 
-COPY . /usr/share/caddy
+COPY stitch-designs /usr/share/caddy
