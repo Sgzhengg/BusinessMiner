@@ -11,12 +11,10 @@ services:
       - POSTGRES_DB=redditminer
 
 # BusinessMiner 前端服务（静态网站）
-  - type: prebuilt
+  - type: docker
     name: businessminer-frontend
-    path: frontend
-    outputDir: .
-    env:
-      - PORT=8080
+    dockerfile: frontend/Dockerfile
+    context: frontend
 
 # BusinessMiner 后端服务
   - type: worker
