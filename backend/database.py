@@ -1,9 +1,17 @@
 """数据库连接和会话管理"""
+import os
+from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from config import get_settings
 
 settings = get_settings()
+
+# 确保 SQLite 数据目录存在
+if "sqlite" in settings.database_url:
+    db_path = settings.database_url.replace("sqlite:///", "")
+    db_dir = Path(db_path).parent
+    db_dir.mkdir(parents=True, exist_ok=True)
 
 # 创建数据库引擎
 engine = create_engine(

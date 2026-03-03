@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     """应用配置"""
     
     # 数据库
-    database_url: str = os.getenv("DATABASE_URL", "postgresql://user:password@localhost:5432/idea_forge")
+    database_url: str = os.getenv("DATABASE_URL", "sqlite:///./data/businessminer.db")
     
     # Reddit API
     reddit_client_id: str = os.getenv("REDDIT_CLIENT_ID", "")
